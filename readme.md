@@ -15,5 +15,8 @@
 - uuid => (Unique Id)
 - Auth => (Middlerware)
 
-[Render Link] =>
+[Netlify Link => Front-End]=> 
+(https://crm-capstone-anish.netlify.app/)
+
+[Render Link => Back-End] =>
 (https://crm-be-project.onrender.com)
