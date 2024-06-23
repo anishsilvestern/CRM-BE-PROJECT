@@ -24,8 +24,6 @@ app.use(cors());
 
 const url = process.env.production ? "https://crm-capstone-anish.netlify.app/" : "http://localhost:5173/"
 
-console.log(process.env.production);
-
 // Authentication middleware
 const Auth = (request, response, next) => {
     console.log(request.path)
@@ -150,7 +148,7 @@ app.get("/forget-password", (req, res) => {
             <div>
               <h1>Forgot Password Don't worry</h1>
               <div>
-                <a href= >
+                <a href=${urlToEmail}>
                   <button>Click Here For Change Password</button>
                 </a>
               </div>
