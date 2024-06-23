@@ -22,6 +22,10 @@ app.use(bodyParser.json());
 // cors middleware for cross origin resource sharing 
 app.use(cors());
 
+const url = process.env.production ? "https://crm-capstone-anish.netlify.app/" : "http://localhost:5173/"
+
+console.log(process.env.production);
+
 // Authentication middleware
 const Auth = (request, response, next) => {
     console.log(request.path)
@@ -117,6 +121,9 @@ app.post("/register", async (request, response)  => {
 // send Link to user's email 
 app.get("/forget-password", (req, res) => {
      const email = req.query.email;
+     const urlToEmail = `${url}new-password?email=${email}`
+
+     console.log(urlToEmail)
 
      try {
         // nodemailer is used to send the otp to the user's email
@@ -143,7 +150,7 @@ app.get("/forget-password", (req, res) => {
             <div>
               <h1>Forgot Password Don't worry</h1>
               <div>
-                <a href="http://localhost:5173/new-password?email=${email}">
+                <a href= >
                   <button>Click Here For Change Password</button>
                 </a>
               </div>
